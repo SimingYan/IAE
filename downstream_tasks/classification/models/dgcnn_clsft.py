@@ -1,5 +1,5 @@
-#  Copyright (c) 2020. Hanchen Wang, hw501@cam.ac.uk
 #  Ref: https://github.com/WangYueFt/dgcnn/blob/master/pytorch/model.py
+#  Ref: https://github.com/hansen7/OcCo/blob/master/OcCo_Torch/models/dgcnn_cls.py
 
 import torch, torch.nn as nn, torch.nn.functional as F
 

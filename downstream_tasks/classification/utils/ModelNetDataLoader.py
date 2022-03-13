@@ -1,4 +1,5 @@
-#  Copyright (c) 2020. Hanchen Wang, hw501@cam.ac.uk
+#  Ref: https://github.com/hansen7/OcCo/tree/master/OcCo_Torch/utils
+
 import os, sys, torch, h5py, warnings, numpy as np
 import open3d as o3d
 

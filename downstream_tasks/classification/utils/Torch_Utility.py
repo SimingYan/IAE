@@ -1,5 +1,7 @@
-#  Copyright (c) 2020. Hanchen Wang, hw501@cam.ac.uk
 #  Ref: https://github.com/pytorch/pytorch/issues/7068#issuecomment-487907668
+#  Ref: https://github.com/hansen7/OcCo/tree/master/OcCo_Torch/utils
+
+
 import torch, os, random, numpy as np
 
 def copy_parameters(model, pretrained_dict, verbose=True):

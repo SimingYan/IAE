@@ -1,7 +1,6 @@
-#  Copyright (c) 2020. Hanchen Wang, hw501@cam.ac.uk
 #  Ref: https://scikit-learn.org/stable/modules/svm.html
 #  Ref: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection
-# CUDA_VISIBLE_DEVICES=2 python train_svm.py --model=vrcnet_util --encoder=dgcnn_cls --output_dim=1024 --restore_path=/path/to/ckpt
+#  Ref: https://github.com/hansen7/OcCo/blob/master/OcCo_Torch/train_svm.py
 
 import os, sys, torch, argparse, datetime, importlib, numpy as np
 sys.path.append('utils')

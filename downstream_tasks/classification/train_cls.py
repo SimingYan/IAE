@@ -1,6 +1,6 @@
-#  Copyright (c) 2020. Hanchen Wang, hw501@cam.ac.uk
 #  Ref: https://github.com/WangYueFt/dgcnn/blob/master/pytorch/main.py
 #  Ref: https://github.com/yanx27/Pointnet_Pointnet2_pytorch/blob/master/train_cls.py
+#  Ref: https://github.com/hansen7/OcCo/blob/master/OcCo_Torch/train_cls.py
 
 import os, sys, torch, shutil, importlib, argparse
 sys.path.append('utils')

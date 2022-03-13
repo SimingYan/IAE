@@ -1,4 +1,4 @@
-#  Copyright (c) 2020. Hanchen Wang, hw501@cam.ac.uk
+#  Ref: https://github.com/hansen7/OcCo/tree/master/OcCo_Torch/utils
 
 import numpy as np
 

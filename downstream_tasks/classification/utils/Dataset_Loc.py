@@ -1,6 +1,4 @@
-#  Copyright (c) 2020. Author: Hanchen Wang, hc.wang96@gmail.com
-#  Modify the path w.r.t your own settings
-
+#  Ref: https://github.com/hansen7/OcCo/tree/master/OcCo_Torch/utils
 
 def Dataset_Loc(dataset, fname, partial=True, bn=False, few_shot=False):
     def fetch_files(filelist):
