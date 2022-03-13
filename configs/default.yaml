@@ -1,0 +1,51 @@
+method: shapenet_dfnet
+data:
+  dataset: Shapes3D
+  path: data/ShapeNet
+  input_type: pointcloud
+  train_split: train
+  val_split: val
+  test_split: test
+  points_file: points.npz
+  points_iou_file: points.npz
+  multi_files: null
+  points_subsample: 1024
+  points_unpackbits: true
+  model_file: model.off
+  pointcloud_file: pointcloud.npz
+  pointcloud_chamfer_file: pointcloud.npz
+  pointcloud_n: 2048
+  pointcloud_noise: 0.005
+  padding: 0.1
+  part_ratio: 0.5
+  partial_type: centery_random
+  rotate: false
+  translate: false
+  single_trans: false
+model:
+  decoder: simple
+  encoder: dgcnn_cls
+  decoder_kwargs: {}
+  encoder_kwargs: {}
+  c_dim: 128
+  feat_dim: 1024
+  k: 20
+training:
+  out_dir:  out/default
+  batch_size: 64
+  print_every: 200
+  visualize_every: 1000
+  checkpoint_every: 1000
+  validate_every: 2000
+  backup_every: 100000
+  eval_sample: false
+  model_selection_metric: loss
+  model_selection_mode: minimize
+  n_workers: 4
+  n_workers_val: 4
+  model_file: null
+test:
+  threshold: 0.5
+  eval_mesh: true
+  eval_pointcloud: true
+  model_file: model_best.pt

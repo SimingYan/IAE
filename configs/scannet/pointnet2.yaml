@@ -1,0 +1,51 @@
+method: dfnet
+data:
+  input_type: partial_pointcloud
+  classes: ['rooms_01']
+  path: data/scannet
+  pointcloud_n: 10000
+  pointcloud_noise: 0.005
+  points_subsample: 2048
+  points_file: points_iou
+  points_iou_file: points_iou
+  pointcloud_file: pointcloud
+  pointcloud_chamfer_file: pointcloud
+  multi_files: 5
+  voxels_file: null
+  part_ratio: 0.5
+  partial_type: centerz_random
+model:
+  encoder: pointnet2
+  encoder_kwargs:
+    hidden_dim: 32
+    plane_type: 'grid'
+    grid_resolution: 32
+    unet3d: true
+    unet3d_kwargs:
+      num_levels: 4
+      f_maps: 32
+      in_channels: 256
+      out_channels: 256
+  decoder: simple_local
+  decoder_kwargs:
+    sample_mode: bilinear # bilinear / nearest
+    hidden_size: 32
+  c_dim: 256
+training:
+  out_dir: out/scannet/pointnet2
+  batch_size: 8
+  model_selection_metric: iou
+  model_selection_mode: maximize
+  print_every: 100
+  visualize_every: 50000
+  validate_every: 10000
+  checkpoint_every: 2000
+  backup_every: 10000
+  n_workers: 0
+  n_workers_val: 0
+test:
+  threshold: 0.01
+  eval_mesh: true
+  eval_pointcloud: false
+  remove_wall: true
+  model_file: model_best.pt
