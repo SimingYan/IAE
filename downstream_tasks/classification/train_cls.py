@@ -1,6 +1,6 @@
+#  Ref: https://github.com/hansen7/OcCo/blob/master/OcCo_Torch/train_cls.py
 #  Ref: https://github.com/WangYueFt/dgcnn/blob/master/pytorch/main.py
 #  Ref: https://github.com/yanx27/Pointnet_Pointnet2_pytorch/blob/master/train_cls.py
-#  Ref: https://github.com/hansen7/OcCo/blob/master/OcCo_Torch/train_cls.py
 
 import os, sys, torch, shutil, importlib, argparse
 sys.path.append('utils')
@@ -42,11 +42,8 @@ def parse_args():
     parser.add_argument('--scheduler', type=str, default='step', help='lr decay scheduler [default: step, or cos]')
 
     ''' === Dataset === '''
-    parser.add_argument('--partial', action='store_true', help='partial objects [default: False]')
-    parser.add_argument('--bn', action='store_true', help='with background noise [default: False]')
     parser.add_argument('--data_aug', type=int, default=0, help='data Augmentation [default: False]')
     parser.add_argument('--dataset', type=str, default='modelnet40', help='dataset [default: modelnet40]')
-    parser.add_argument('--fname', type=str, help='filename, used in ScanObjectNN or fewer data [default:]')
 
     return parser.parse_args()
 
@@ -58,10 +55,9 @@ def main(args):
     writer = SummaryWriter(os.path.join(MyLogger.experiment_dir, 'runs'))
 
     MyLogger.logger.info('Load dataset %s' % args.dataset)
-    NUM_CLASSES, TRAIN_FILES, TEST_FILES = Dataset_Loc(dataset=args.dataset, fname=args.fname,
-                                                       partial=args.partial, bn=args.bn)
-    TRAIN_DATASET = General_CLSDataLoader_HDF5(mode='train', file_list=TRAIN_FILES, num_point=args.num_point, data_aug=args.data_aug)
-    TEST_DATASET = General_CLSDataLoader_HDF5(mode='test', file_list=TEST_FILES, num_point=args.num_point, data_aug=args.data_aug)
+    NUM_CLASSES, TRAIN_FILES, TEST_FILES = Dataset_Loc(dataset=args.dataset)
+    TRAIN_DATASET = General_CLSDataLoader_HDF5(file_list=TRAIN_FILES, num_point=args.num_point, data_aug=args.data_aug)
+    TEST_DATASET = General_CLSDataLoader_HDF5(file_list=TEST_FILES, num_point=args.num_point, data_aug=args.data_aug)
     trainDataLoader = DataLoader(TRAIN_DATASET, batch_size=args.batch_size, shuffle=True, num_workers=8, drop_last=True)
     testDataLoader = DataLoader(TEST_DATASET, batch_size=args.batch_size, shuffle=False, num_workers=4)
 

@@ -15,7 +15,7 @@ python train_svm.py --encoder=dgcnn_cls --restore_path=./pretrained_models/model
 
 ### Fine-tuning on ModelNet40
 ```
-python train_cls.py --use_sgd --model=dgcnn_clsft --dataset=modelnet40 --bn --log_dir=ours_clsft --restore --restore_path=./pretrained_models/modelnet40_clsft.pt
+python train_cls.py --use_sgd --model=dgcnn_clsft --dataset=modelnet40 --log_dir=ours_clsft --restore --restore_path=./pretrained_models/modelnet40_clsft.pt
 ```
 
 ## Acknowledgements
