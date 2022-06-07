@@ -1,3 +1,5 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/implicit-autoencoder-for-point-cloud-self/3d-point-cloud-linear-classification-on)](https://paperswithcode.com/sota/3d-point-cloud-linear-classification-on?p=implicit-autoencoder-for-point-cloud-self)
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/implicit-autoencoder-for-point-cloud-self/3d-point-cloud-classification-on-modelnet40)](https://paperswithcode.com/sota/3d-point-cloud-classification-on-modelnet40?p=implicit-autoencoder-for-point-cloud-self)
 
 # Implicit Autoencoder for Point Cloud Self-supervised Representation Learning 
