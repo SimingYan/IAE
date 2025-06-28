@@ -40,7 +40,7 @@ def generate_df_value(pc, points, occ):
     return np.squeeze(nearest_dist)
 
 
-object_list = glob.glob(args.dataest_path + '/*')
+object_list = glob.glob(args.dataset_path + '/*')
 object_list.sort()
 
 process_num = len(object_list) // args.split
