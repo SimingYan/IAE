@@ -39,7 +39,7 @@ We pre-train our model on two different datasets, ShapeNet and ScanNet, for diff
 
 ## Usage
 
-Install shapely model before training
+Install Shapely package before training
 ```
 pip install shapely==1.8.5
 ```
