@@ -1,5 +1,10 @@
 ## Prepare Datasets
 
+Install Open3D library:
+```
+pip install open3d==0.14.1
+```
+
 #### ShapeNet(114G)
 
 Please download the dataset by running the [script](https://github.com/autonomousvision/occupancy_networks#preprocessed-data) from Occupancy Networks, and put it under `data/ShapeNet` folder.
